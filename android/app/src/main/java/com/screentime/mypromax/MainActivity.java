@@ -1,4 +1,4 @@
-package com.timeout;
+package com.screentime.mypromax;
 import expo.modules.ReactActivityDelegateWrapper;
 
 import com.facebook.react.ReactActivity;
@@ -14,7 +14,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "TimeOut";
+    return "Timeout";
   }
 
   /**

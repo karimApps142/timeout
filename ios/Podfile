@@ -28,7 +28,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'TimeOut' do
+target 'Timeout' do
   use_expo_modules!
   post_integrate do |installer|
     begin
@@ -56,7 +56,7 @@ target 'TimeOut' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'TimeOutTests' do
+  target 'TimeoutTests' do
     inherit! :complete
     # Pods for testing
   end

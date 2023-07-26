@@ -1,4 +1,4 @@
-package com.timeout;
+package com.screentime.mypromax;
 import android.content.res.Configuration;
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;

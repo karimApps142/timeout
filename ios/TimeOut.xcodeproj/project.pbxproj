@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* TimeOutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TimeOutTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-TimeOut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-TimeOut.a */; };
+		00E356F31AD99517003FC87E /* TimeoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TimeoutTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-Timeout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Timeout.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-TimeOut-TimeOutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TimeOut-TimeOutTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-Timeout-TimeoutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Timeout-TimeoutTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9A0F1772F96E354BBEAB9DF3 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D68AC8B9CFD4D667222AC /* ExpoModulesProvider.swift */; };
 		A1C52D964FD38A3282EA05EC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173459383EE415F265F66033 /* ExpoModulesProvider.swift */; };
@@ -24,32 +24,32 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = TimeOut;
+			remoteInfo = "Timeout";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* TimeOutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeOutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* TimeoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TimeoutTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* TimeOutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeOutTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* TimeOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TimeOut/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TimeOut/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TimeOut/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TimeOut/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TimeOut/main.m; sourceTree = "<group>"; };
-		173459383EE415F265F66033 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-TimeOut-TimeOutTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-TimeOut-TimeOutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeOut-TimeOutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-TimeOut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeOut.debug.xcconfig"; path = "Target Support Files/Pods-TimeOut/Pods-TimeOut.debug.xcconfig"; sourceTree = "<group>"; };
-		499D68AC8B9CFD4D667222AC /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-TimeOut/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-TimeOut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeOut.release.xcconfig"; path = "Target Support Files/Pods-TimeOut/Pods-TimeOut.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-TimeOut-TimeOutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeOut-TimeOutTests.debug.xcconfig"; path = "Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-TimeOut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeOut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TimeOut/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-TimeOut-TimeOutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeOut-TimeOutTests.release.xcconfig"; path = "Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests.release.xcconfig"; sourceTree = "<group>"; };
-		9805C0A32A6E604B00CE842E /* TimeOut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TimeOut.entitlements; path = TimeOut/TimeOut.entitlements; sourceTree = "<group>"; };
-		985D56692A6ED1FB0088A5AE /* TimeOutRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TimeOutRelease.entitlements; path = TimeOut/TimeOutRelease.entitlements; sourceTree = "<group>"; };
-		989EC9DB2A6E69750070DCE9 /* TimeOut-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeOut-Bridging-Header.h"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* TimeoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TimeoutTests.m"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Timeout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Timeout.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Timeout/AppDelegate.h"; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "Timeout/AppDelegate.mm"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Timeout/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Timeout/Info.plist"; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Timeout/main.m"; sourceTree = "<group>"; };
+		173459383EE415F265F66033 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Timeout-TimeoutTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Timeout-TimeoutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Timeout-TimeoutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-Timeout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timeout.debug.xcconfig"; path = "Target Support Files/Pods-Timeout/Pods-Timeout.debug.xcconfig"; sourceTree = "<group>"; };
+		499D68AC8B9CFD4D667222AC /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Timeout/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-Timeout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timeout.release.xcconfig"; path = "Target Support Files/Pods-Timeout/Pods-Timeout.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-Timeout-TimeoutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timeout-TimeoutTests.debug.xcconfig"; path = "Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-Timeout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Timeout.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Timeout/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-Timeout-TimeoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timeout-TimeoutTests.release.xcconfig"; path = "Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests.release.xcconfig"; sourceTree = "<group>"; };
+		9805C0A32A6E604B00CE842E /* Timeout.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Timeout.entitlements; path = Timeout/Timeout.entitlements; sourceTree = "<group>"; };
+		985D56692A6ED1FB0088A5AE /* TimeoutRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = TimeoutRelease.entitlements; path = Timeout/TimeoutRelease.entitlements; sourceTree = "<group>"; };
+		989EC9DB2A6E69750070DCE9 /* Timeout-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timeout-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-TimeOut-TimeOutTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-Timeout-TimeoutTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,20 +66,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-TimeOut.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-Timeout.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* TimeOutTests */ = {
+		00E356EF1AD99517003FC87E /* TimeoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* TimeOutTests.m */,
+				00E356F21AD99517003FC87E /* TimeoutTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = TimeOutTests;
+			path = "TimeoutTests";
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -90,36 +90,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* TimeOut */ = {
+		13B07FAE1A68108700A75B9A /* Timeout */ = {
 			isa = PBXGroup;
 			children = (
-				985D56692A6ED1FB0088A5AE /* TimeOutRelease.entitlements */,
-				9805C0A32A6E604B00CE842E /* TimeOut.entitlements */,
+				985D56692A6ED1FB0088A5AE /* TimeoutRelease.entitlements */,
+				9805C0A32A6E604B00CE842E /* Timeout.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				989EC9DB2A6E69750070DCE9 /* TimeOut-Bridging-Header.h */,
+				989EC9DB2A6E69750070DCE9 /* Timeout-Bridging-Header.h */,
 			);
-			name = TimeOut;
+			name = "Timeout";
 			sourceTree = "<group>";
 		};
-		2B599A84BAB1FF6A953603DC /* TimeOut */ = {
+		2B599A84BAB1FF6A953603DC /* Timeout */ = {
 			isa = PBXGroup;
 			children = (
 				499D68AC8B9CFD4D667222AC /* ExpoModulesProvider.swift */,
 			);
-			name = TimeOut;
+			name = "Timeout";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-TimeOut.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-TimeOut-TimeOutTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-Timeout.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-Timeout-TimeoutTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,9 +134,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* TimeOut */,
+				13B07FAE1A68108700A75B9A /* Timeout */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* TimeOutTests */,
+				00E356EF1AD99517003FC87E /* TimeoutTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -150,8 +150,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* TimeOut.app */,
-				00E356EE1AD99517003FC87E /* TimeOutTests.xctest */,
+				13B07F961A680F5B00A75B9A /* Timeout.app */,
+				00E356EE1AD99517003FC87E /* TimeoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,27 +159,27 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-TimeOut.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-TimeOut.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-TimeOut-TimeOutTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-TimeOut-TimeOutTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-Timeout.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-Timeout.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-Timeout-TimeoutTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-Timeout-TimeoutTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CB712338C2CE1C2A6ED496E2 /* TimeOutTests */ = {
+		CB712338C2CE1C2A6ED496E2 /* TimeoutTests */ = {
 			isa = PBXGroup;
 			children = (
 				173459383EE415F265F66033 /* ExpoModulesProvider.swift */,
 			);
-			name = TimeOutTests;
+			name = "TimeoutTests";
 			sourceTree = "<group>";
 		};
 		CD87144C243DE0EF4FD8AF70 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				2B599A84BAB1FF6A953603DC /* TimeOut */,
-				CB712338C2CE1C2A6ED496E2 /* TimeOutTests */,
+				2B599A84BAB1FF6A953603DC /* Timeout */,
+				CB712338C2CE1C2A6ED496E2 /* TimeoutTests */,
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
@@ -187,9 +187,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* TimeOutTests */ = {
+		00E356ED1AD99517003FC87E /* TimeoutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TimeOutTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TimeoutTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				58C1E6B9F00C6A5F9A10C2B6 /* [Expo] Configure project */,
@@ -204,14 +204,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = TimeOutTests;
-			productName = TimeOutTests;
-			productReference = 00E356EE1AD99517003FC87E /* TimeOutTests.xctest */;
+			name = "TimeoutTests";
+			productname = "TimeoutTests";
+			productReference = 00E356EE1AD99517003FC87E /* TimeoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* TimeOut */ = {
+		13B07F861A680F5B00A75B9A /* Timeout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TimeOut" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Timeout" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -227,9 +227,9 @@
 			);
 			dependencies = (
 			);
-			name = TimeOut;
-			productName = TimeOut;
-			productReference = 13B07F961A680F5B00A75B9A /* TimeOut.app */;
+			name = "Timeout";
+			productName = "Timeout";
+			productReference = 13B07F961A680F5B00A75B9A /* Timeout.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -249,7 +249,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TimeOut" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Timeout" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -262,8 +262,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* TimeOut */,
-				00E356ED1AD99517003FC87E /* TimeOutTests */,
+				13B07F861A680F5B00A75B9A /* Timeout */,
+				00E356ED1AD99517003FC87E /* TimeoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,15 +310,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut/Pods-TimeOut-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout/Pods-Timeout-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut/Pods-TimeOut-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout/Pods-Timeout-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeOut/Pods-TimeOut-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Timeout/Pods-Timeout-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		58C1E6B9F00C6A5F9A10C2B6 /* [Expo] Configure project */ = {
@@ -338,7 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-TimeOut-TimeOutTests/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Timeout-TimeoutTests/expo-configure-project.sh\"\n";
 		};
 		6EB212EF2178812460403BA2 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -357,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-TimeOut/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Timeout/expo-configure-project.sh\"\n";
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -374,7 +374,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TimeOut-TimeOutTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Timeout-TimeoutTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -396,7 +396,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TimeOut-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Timeout-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -409,15 +409,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -426,15 +426,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut/Pods-TimeOut-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout/Pods-Timeout-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut/Pods-TimeOut-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout/Pods-Timeout-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeOut/Pods-TimeOut-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Timeout/Pods-Timeout-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -443,15 +443,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimeOut-TimeOutTests/Pods-TimeOut-TimeOutTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Timeout-TimeoutTests/Pods-Timeout-TimeoutTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -480,7 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* TimeOutTests.m in Sources */,
+				00E356F31AD99517003FC87E /* TimeoutTests.m in Sources */,
 				A1C52D964FD38A3282EA05EC /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +500,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* TimeOut */;
+			target = 13B07F861A680F5B00A75B9A /* Timeout */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -508,14 +508,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-TimeOut-TimeOutTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-Timeout-TimeoutTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TimeOutTests/Info.plist;
+				INFOPLIST_FILE = "TimeoutTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,19 +528,19 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.screentime.mypromax";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeOut.app/TimeOut";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timeout.app/Timeout";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-TimeOut-TimeOutTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-Timeout-TimeoutTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = TimeOutTests/Info.plist;
+				INFOPLIST_FILE = "TimeoutTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,26 +553,27 @@
 					"$(inherited)",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.screentime.mypromax";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeOut.app/TimeOut";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timeout.app/Timeout";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-TimeOut.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-Timeout.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = TimeOut/TimeOut.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Timeout/Timeout.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 9Q4NF8P8TT;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = TimeOut/Info.plist;
+				INFOPLIST_FILE = "Timeout/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Timeout";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -585,11 +586,11 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.screentime.testing.org;
-				PRODUCT_NAME = TimeOut;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.screentime.mypromax";
+				PRODUCT_NAME = "Timeout";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Screen-timeout";
-				SWIFT_OBJC_BRIDGING_HEADER = "TimeOut-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Timeout-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -598,18 +599,19 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-TimeOut.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-Timeout.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = TimeOut/TimeOutRelease.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Timeout/TimeoutRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N239SQ2UD9;
-				INFOPLIST_FILE = TimeOut/Info.plist;
+				INFOPLIST_FILE = "Timeout/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Timeout";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,11 +624,11 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.screentime.karimapps;
-				PRODUCT_NAME = TimeOut;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.screentime.mypromax";
+				PRODUCT_NAME = "Timeout";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = screen;
-				SWIFT_OBJC_BRIDGING_HEADER = "TimeOut-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Timeout-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -774,7 +776,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TimeOutTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TimeoutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -783,7 +785,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TimeOut" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Timeout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -792,7 +794,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TimeOut" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Timeout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
