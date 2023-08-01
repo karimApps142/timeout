@@ -103,7 +103,7 @@ export const BaseHeader = ({
             }}>
             {/* left Side */}
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <TouchableOpacity onPress={onPressSetting}>
+              <TouchableOpacity onPress={onPressSetting} activeOpacity={0.7}>
                 <BaseIcon
                   icon={icons.setting}
                   color={COLORS.secondary}
@@ -111,7 +111,10 @@ export const BaseHeader = ({
                 />
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={onPressAdd} style={{marginLeft: 15}}>
+              <TouchableOpacity
+                onPress={onPressAdd}
+                style={{marginLeft: 15}}
+                activeOpacity={0.7}>
                 <BaseIcon icon={icons.add} color={COLORS.secondary} size={40} />
               </TouchableOpacity>
             </View>

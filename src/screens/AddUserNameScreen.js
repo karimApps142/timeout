@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   createUserName: {
-    color: COLORS.white,
     ...FONTS.h3,
+    color: COLORS.white,
     fontSize: 20,
     fontWeight: '700',
     textAlign: 'center',

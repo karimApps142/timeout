@@ -1,21 +1,28 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {
   BaseButton,
   BaseFlatList,
   BaseHeader,
-  BaseIcon,
   BaseSearch,
   BaseView,
-  HomeCard,
   UserCard,
 } from '../components';
-import {COLORS, FONTS, SIZES} from '../constants/theme';
-import icons from '../constants/icons';
+import {COLORS, FONTS} from '../constants/theme';
 
 export const AddFriendsScreen = () => {
-  const requestsData = [{}, {}];
-  const data = [{}, {}, {}, {}, {}];
+  const requestsData = [
+    {id: 1, name: 'John Smith', username: 'johnsmith'},
+    {id: 2, name: 'Jane Doe', username: 'janedoe'},
+  ];
+
+  const data = [
+    {id: 1, name: 'Alice Johnson', username: 'alicejohnson'},
+    {id: 2, name: 'Bob Lee', username: 'boblee'},
+    {id: 3, name: 'Charlie Brown', username: 'charliebrown'},
+    {id: 4, name: 'David Kim', username: 'davidkim'},
+    {id: 5, name: 'Emily Chen', username: 'emilychen'},
+  ];
   return (
     <BaseView>
       <View style={styles.container}>
@@ -28,21 +35,19 @@ export const AddFriendsScreen = () => {
               <BaseButton title={'Invite Friends '} />
               <BaseSearch />
 
-              {/* Accept Request */}
               <Text style={[styles.headings, {marginTop: 10}]}>
                 Accept Request
               </Text>
 
               <BaseFlatList
                 data={requestsData}
-                renderItem={() => <UserCard />}
+                renderItem={({item}) => <UserCard friendRequest item={item} />}
               />
-              {/* Add New */}
               <Text style={styles.headings}>Add New</Text>
             </>
           }
           data={data}
-          renderItem={() => <UserCard />}
+          renderItem={({item}) => <UserCard item={item} />}
         />
       </View>
     </BaseView>

@@ -17,7 +17,6 @@ export const LoginScreen = ({navigation}) => {
           <BaseButton
             onPress={() => {
               navigation.navigate('addUserNameStack');
-              alert('Google Log In');
             }}
             title={'Log In With Google'}
             icon={icons.google}
@@ -29,7 +28,9 @@ export const LoginScreen = ({navigation}) => {
           <ORLine />
 
           <BaseButton
-            onPress={() => alert('Apple Log In')}
+            onPress={() => {
+              navigation.navigate('addUserNameStack');
+            }}
             title={'Log In With Apple'}
             icon={icons.apple}
             iconOrgColor

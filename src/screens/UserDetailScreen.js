@@ -1,12 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
-import {
-  BaseButton,
-  BaseHeader,
-  BaseIcon,
-  BaseView,
-  HomeCard,
-} from '../components';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {BaseHeader, BaseIcon, BaseView, HomeCard} from '../components';
 import {COLORS, FONTS, SIZES} from '../constants/theme';
 import icons from '../constants/icons';
 
@@ -15,15 +9,14 @@ export const UserDetailScreen = () => {
     <BaseView>
       <View style={styles.container}>
         <BaseHeader otherStyles={styles.header} />
-        {/* Background style view */}
         <View style={styles.BgBlackView} />
 
         <View style={styles.bottomMain}>
           <HomeCard disabled={true} />
-          {/* Remove User Button */}
           <TouchableOpacity
-            onPress={() => alert('Are you sure to remove')}
-            style={styles.removeButton}>
+            onPress={() => {}}
+            style={styles.removeButton}
+            activeOpacity={0.7}>
             <Text style={styles.btnText}>Remove Friend</Text>
             <BaseIcon
               icon={icons.close}

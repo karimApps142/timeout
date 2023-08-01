@@ -1,19 +1,52 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {
-  BaseButton,
   BaseFlatList,
   BaseHeader,
-  BaseInput,
   BaseView,
   HomeCard,
   HomeFooter,
 } from '../components';
-import {COLORS, FONTS, SIZES} from '../constants/theme';
-import icons from '../constants/icons';
+import {COLORS, SIZES} from '../constants/theme';
 
 export const HomeScreen = ({navigation}) => {
-  const data = [{}, {}, {}];
+  const data = [
+    {
+      id: 1,
+      name: 'Alice Johnson',
+      username: 'alicejohnson',
+      screen_time: '4h 35m',
+    },
+    {id: 2, name: 'Bob Lee', username: 'boblee', screen_time: '2h 18m'},
+    {
+      id: 3,
+      name: 'Charlie Brown',
+      username: 'charliebrown',
+      screen_time: '7h 42m',
+    },
+    {id: 4, name: 'David Kim', username: 'davidkim', screen_time: '1h 59m'},
+    {id: 5, name: 'Emily Chen', username: 'emilychen', screen_time: '5h 12m'},
+    {
+      id: 6,
+      name: 'Frank Miller',
+      username: 'frankmiller',
+      screen_time: '3h 27m',
+    },
+    {id: 7, name: 'Grace Lee', username: 'gracelee', screen_time: '6h 51m'},
+    {id: 8, name: 'Henry Park', username: 'henrypark', screen_time: '8h 03m'},
+    {
+      id: 9,
+      name: 'Isabella Garcia',
+      username: 'isabellagarcia',
+      screen_time: '9h 47m',
+    },
+    {
+      id: 10,
+      name: 'Jack Johnson',
+      username: 'jackjohnson',
+      screen_time: '2h 59m',
+    },
+  ];
 
   return (
     <BaseView>
@@ -25,13 +58,15 @@ export const HomeScreen = ({navigation}) => {
           isBack={false}
           isHomeHeader={true}
         />
-        {/* Background style view */}
         <View style={styles.BgBlackView} />
 
         <BaseFlatList
           data={data}
-          renderItem={() => (
-            <HomeCard onPress={() => navigation.navigate('userDetailScreen')} />
+          renderItem={({item}) => (
+            <HomeCard
+              onPress={() => navigation.navigate('userDetailScreen')}
+              item={item}
+            />
           )}
           contentContainerStyle={styles.flatList}
         />
@@ -48,6 +83,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    paddingHorizontal: 15,
   },
   container: {
     backgroundColor: 'rgba(30, 29, 31, 1)',
@@ -68,5 +104,6 @@ const styles = StyleSheet.create({
   },
   flatList: {
     padding: 10,
+    paddingBottom: 120,
   },
 });

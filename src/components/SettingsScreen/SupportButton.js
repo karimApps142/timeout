@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   icon: {
-    height: 20,
-    width: 20,
+    height: 15,
+    width: 15,
   },
 });
 

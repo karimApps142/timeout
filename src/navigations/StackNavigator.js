@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   AddFriendsScreen,
   AddUserNameScreen,
@@ -8,14 +8,13 @@ import {
   ProfileSettingsScreen,
   UserDetailScreen,
 } from '../screens';
-import {Settings} from 'react-native';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => (
   <Stack.Navigator
     initialRouteName="loginStack"
-    screenOptions={{headerShown: false}}>
+    screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
     <Stack.Screen name="loginStack" component={LoginScreen} />
     <Stack.Screen name="addUserNameStack" component={AddUserNameScreen} />
     <Stack.Screen name="homeScreen" component={HomeScreen} />

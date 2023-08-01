@@ -1,13 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import {
-  BaseHeader,
-  BaseInput,
-  BaseView,
-  SupportButton,
-  SupportScreen,
-} from '../components';
-import {COLORS, FONTS, SIZES} from '../constants/theme';
+import {BaseHeader, BaseInput, BaseView, SupportButton} from '../components';
+import {COLORS, FONTS} from '../constants/theme';
 import icons from '../constants/icons';
 
 export const ProfileSettingsScreen = () => {
@@ -17,7 +11,6 @@ export const ProfileSettingsScreen = () => {
         <BaseHeader otherStyles={styles.header} title="Settings" />
 
         <ScrollView contentContainerStyle={styles.bottomMain}>
-          {/* Profile */}
           <Text style={styles.headings}>Profile</Text>
           <BaseInput
             leftIcon={icons.user}
@@ -29,14 +22,12 @@ export const ProfileSettingsScreen = () => {
             icon={icons.edit}
             placeholder={'Username'}
           />
-          {/* Account */}
           <Text style={[styles.headings, {marginTop: 10}]}>Account</Text>
           <BaseInput
             leftIcon={icons.email}
             editable={false}
             placeholder={'Email'}
           />
-          {/* Support  */}
           <Text style={[styles.headings, {marginTop: 10}]}>Support</Text>
           <SupportButton
             icon={icons.notification}
@@ -50,7 +41,6 @@ export const ProfileSettingsScreen = () => {
           />
           <SupportButton icon={icons.star} title={'Leave a review'} />
 
-          {/* More */}
           <Text style={[styles.headings, {marginTop: 10}]}>More</Text>
           <SupportButton icon={icons.invite} title={'Invite Friends'} />
           <SupportButton icon={icons.bin} title={'Delete Account'} />
