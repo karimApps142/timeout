@@ -3,21 +3,22 @@ import {View, StyleSheet, Image} from 'react-native';
 import {BaseButton, BaseView, ORLine} from '../components';
 import {COLORS, SIZES} from '../constants/theme';
 import icons from '../constants/icons';
+import useAuth from '../hooks/useAuth';
 
 export const LoginScreen = ({navigation}) => {
+  const {loading, loginWithGoogle} = useAuth();
   return (
-    <BaseView>
+    <BaseView overlayLoading={loading}>
       <View style={styles.container}>
         <View style={styles.BgBlackView} />
 
         <View style={styles.logoMain}>
           <Image source={icons.logo} style={styles.logo} />
         </View>
+
         <View style={styles.buttonMain}>
           <BaseButton
-            onPress={() => {
-              navigation.navigate('addUserNameStack');
-            }}
+            onPress={() => loginWithGoogle()}
             title={'Log In With Google'}
             icon={icons.google}
             iconOrgColor

@@ -1,11 +1,11 @@
 import {create} from 'apisauce';
 import localStorage from './localStorage';
 
-// export const baseURL = 'http://192.168.0.120:8000/api';
-// export const URL = 'http://192.168.0.120:8000/storage/';
+export const baseURL = 'http://192.168.0.120:8000/api';
+export const URL = 'http://192.168.0.120:8000/storage/';
 
-export const baseURL = 'https://dashboard.tarbiyalegacy.com/api';
-export const URL = 'https://dashboard.tarbiyalegacy.com/storage/';
+// export const baseURL = 'https://dashboard.tarbiyalegacy.com/api';
+// export const URL = 'https://dashboard.tarbiyalegacy.com/storage/';
 
 const apiClient = create({baseURL});
 

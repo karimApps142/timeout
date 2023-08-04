@@ -11,12 +11,19 @@ import {
 
 const Stack = createNativeStackNavigator();
 
-const StackNavigator = () => (
+const AuthStack = () => (
   <Stack.Navigator
     initialRouteName="loginStack"
     screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
     <Stack.Screen name="loginStack" component={LoginScreen} />
     <Stack.Screen name="addUserNameStack" component={AddUserNameScreen} />
+  </Stack.Navigator>
+);
+
+const StackNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="loginStack"
+    screenOptions={{headerShown: false, animation: 'slide_from_right'}}>
     <Stack.Screen name="homeScreen" component={HomeScreen} />
     <Stack.Screen name="userDetailScreen" component={UserDetailScreen} />
     <Stack.Screen name="addFriendsScreen" component={AddFriendsScreen} />
@@ -27,4 +34,4 @@ const StackNavigator = () => (
   </Stack.Navigator>
 );
 
-export {StackNavigator};
+export {AuthStack, StackNavigator};

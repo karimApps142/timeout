@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "588754586828",
+    "project_id": "khidmatapp-daed6",
+    "storage_bucket": "khidmatapp-daed6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588754586828:android:b72c1251bd03ce2783c669",
+        "android_client_info": {
+          "package_name": "com.screentime.mypromax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588754586828-6e87elblujnjjt81sjvakh3k072if5g7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.screentime.mypromax",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "588754586828-bk5f5bohmh9t3d0f58ov46a3cmuhhude.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXlvtkQU_JgjGFdBX5Esyj6rpsQJlHACA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588754586828-bk5f5bohmh9t3d0f58ov46a3cmuhhude.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "588754586828-68hj0sdvl7hhnakvmjdo8p20iptgooht.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nextvisionapp.khidmatapp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588754586828:android:87e3e3f5709135ac83c669",
+        "android_client_info": {
+          "package_name": "pizzadelivery.karimapps.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588754586828-lht1qg2drho23vuug9k3lh1ftca83n5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pizzadelivery.karimapps.com",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "588754586828-bk5f5bohmh9t3d0f58ov46a3cmuhhude.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXlvtkQU_JgjGFdBX5Esyj6rpsQJlHACA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588754586828-bk5f5bohmh9t3d0f58ov46a3cmuhhude.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "588754586828-68hj0sdvl7hhnakvmjdo8p20iptgooht.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nextvisionapp.khidmatapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

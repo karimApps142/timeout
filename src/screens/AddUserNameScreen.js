@@ -1,12 +1,28 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {BaseButton, BaseHeader, BaseInput, BaseView} from '../components';
+import {View, Text, StyleSheet, Alert} from 'react-native';
+import * as Yup from 'yup';
+
+import {BaseView} from '../components';
 import {COLORS, FONTS, SIZES} from '../constants/theme';
 import icons from '../constants/icons';
+import {BaseForm} from '../components/Form/BaseForm';
+import {SubmitButton} from '../components/Form/SubmitButton';
+import {BaseFormInput} from '../components/Form/BaseFormInput';
+import useAuth from '../hooks/useAuth';
 
-export const AddUserNameScreen = ({navigation}) => {
+const validationSchema = Yup.object().shape({
+  username: Yup.string().required('Username is required'),
+});
+export const AddUserNameScreen = ({navigation, route}) => {
+  const {loading, loginWithSocialAccount} = useAuth();
+  const data = route.params?.data ?? null;
+
+  if (!data) {
+    return null;
+  }
+
   return (
-    <BaseView>
+    <BaseView overlayLoading={loading}>
       <View style={styles.container}>
         {/* style views */}
         <View style={[styles.BgBlackView, {top: '-100%', width: 180}]} />
@@ -17,19 +33,29 @@ export const AddUserNameScreen = ({navigation}) => {
           <Text style={styles.createUserName}>
             Create an unique username so friends can find you 🥳
           </Text>
-
-          <BaseInput
-            placeholder={'Enter Username'}
-            otherStyles={styles.input}
-          />
-
-          <BaseButton
-            onPress={() => navigation.navigate('homeScreen')}
-            title={'Enter'}
-            Righticon={icons.next}
-            iconColor={COLORS.lightGray}
-            otherStyles={styles.button}
-          />
+          <BaseForm
+            initialValues={{
+              username: '',
+            }}
+            validationSchema={validationSchema}
+            onSubmit={values => {
+              loginWithSocialAccount(data?.provider, {
+                ...data,
+                ...values,
+              });
+            }}>
+            <BaseFormInput
+              name="username"
+              placeholder={'Enter Username'}
+              otherStyles={styles.input}
+            />
+            <SubmitButton
+              title={'Enter'}
+              Righticon={icons.next}
+              iconColor={COLORS.lightGray}
+              otherStyles={styles.button}
+            />
+          </BaseForm>
         </View>
       </View>
     </BaseView>
@@ -74,6 +100,5 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#2A2932',
-    marginVertical: 25,
   },
 });
