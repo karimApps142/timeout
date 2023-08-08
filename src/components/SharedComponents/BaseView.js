@@ -1,32 +1,20 @@
 import React from 'react';
-import {ActivityIndicator, View, Text} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import {COLORS, FONTS} from '../../constants/theme';
 
 export const BaseView = ({
-  styles,
   loading,
   IndicatorSize = 'large',
   overlayLoading,
   children,
   flex = 1,
-  otherStyles,
 }) => {
   if (loading) {
     return (
-      <View
-        style={[
-          {
-            flex: 1,
-            paddingTop: 30,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: COLORS.white,
-          },
-          otherStyles,
-        ]}>
+      <View style={[styles.container]}>
         <ActivityIndicator
           animating={loading}
-          color={COLORS.primary}
+          color={COLORS.white}
           size={IndicatorSize}
         />
       </View>
@@ -34,33 +22,14 @@ export const BaseView = ({
   }
 
   return (
-    <View style={[{flex: flex, backgroundColor: COLORS.white}, styles]}>
+    <View style={[{flex: flex, backgroundColor: COLORS.white}]}>
       {overlayLoading && (
-        <View
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            left: 0,
-            bottom: 0,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'rgba(0,0,0,0.3)',
-            zIndex: 999,
-          }}>
-          <View
-            style={{
-              backgroundColor: COLORS.white,
-              paddingVertical: 10,
-              paddingHorizontal: 20,
-              borderRadius: 5,
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <Text style={{...FONTS.h4, marginRight: 5}}>Loading...</Text>
+        <View style={styles.overlay}>
+          <View style={styles.overlayContent}>
+            <Text style={styles.overlayText}>Loading...</Text>
             <ActivityIndicator
               animating={overlayLoading}
-              color={COLORS.primary}
+              color={COLORS.white}
               size="large"
             />
           </View>
@@ -70,3 +39,37 @@ export const BaseView = ({
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.black,
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    zIndex: 999,
+  },
+  overlayContent: {
+    backgroundColor: COLORS.black,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  overlayText: {
+    ...FONTS.h4,
+    color: COLORS.white,
+    marginRight: 5,
+  },
+});

@@ -30,6 +30,12 @@ const rightArrow = require('../assets/right-arrow.png');
 const call = require('../assets/call.png');
 const privacy = require('../assets/file.png');
 
+const one = require('../assets/1.png');
+const two = require('../assets/2.png');
+const three = require('../assets/3.png');
+const four = require('../assets/4.png');
+const five = require('../assets/5.png');
+
 export default {
   google,
   apple,
@@ -58,4 +64,9 @@ export default {
   rightArrow,
   call,
   privacy,
+  one,
+  two,
+  three,
+  four,
+  five,
 };

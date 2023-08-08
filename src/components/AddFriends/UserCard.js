@@ -3,23 +3,43 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {COLORS, FONTS} from '../../constants/theme';
 import {BaseIcon} from '../SharedComponents/BaseIcon';
 import icons from '../../constants/icons';
+import {useDispatch} from 'react-redux';
+import {friendRequestAccept, friendRequestSend} from '../../store/friends';
 
-const UserCard = ({item, onPress, friendRequest, disabled = false}) => {
+const UserCard = ({item, friendRequest}) => {
+  const dispatch = useDispatch();
+
+  const user = friendRequest ? item?.user : item;
+
   return (
     <View style={styles.card}>
       <Image source={icons.emoji} style={styles.emoji} />
       <View style={styles.userDetails}>
-        <Text style={styles.name}>{item?.name}</Text>
-        <Text style={styles.username}>@{item?.username}</Text>
+        <Text style={styles.name}>{user?.name}</Text>
+        <Text style={styles.username}>@{user?.username}</Text>
       </View>
       <TouchableOpacity
         style={styles.acceptButton}
-        disabled={disabled}
-        onPress={onPress}>
+        disabled={user?.to}
+        onPress={() => {
+          if (friendRequest && user?.from) {
+            dispatch(friendRequestAccept(item?.id));
+          } else {
+            dispatch(friendRequestSend({friend_id: item?.id}));
+          }
+        }}>
         <Text style={styles.acceptText}>
-          {friendRequest ? 'Accept' : 'Add'}
+          {friendRequest
+            ? 'Accept'
+            : user?.from
+            ? 'Accept'
+            : user?.to
+            ? 'Sent'
+            : 'Add'}
         </Text>
-        <BaseIcon icon={icons.accept} color={COLORS.white} size={14} />
+        {!user?.to ? (
+          <BaseIcon icon={icons.accept} color={COLORS.white} size={14} />
+        ) : null}
       </TouchableOpacity>
     </View>
   );

@@ -3,6 +3,8 @@ import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
+import jwt_decode from 'jwt-decode';
+import {appleAuth} from '@invertase/react-native-apple-authentication';
 
 import {Alert} from 'react-native';
 import AuthContext from '../context/AuthContext';
@@ -18,56 +20,56 @@ const useAuth = () => {
   const [pushToken, setPushToken] = useState(null);
 
   const {trigger} = useContext(AuthContext);
-  const {updateUser} = trigger;
+  const {updateUser, signout} = trigger;
 
   useEffect(() => {
     GoogleSignin.configure({});
   }, []);
 
-  // const getDeviceToken = useCallback(async () => {
-  //   const settings = await notifee.requestPermission();
-  //   if (settings.authorizationStatus === AuthorizationStatus.DENIED) {
-  //     Alert.alert(
-  //       'Notification Permission Required',
-  //       'Please allow notifications to receive important updates about your orders.',
-  //       [
-  //         {
-  //           text: 'Cancel',
-  //           onPress: () => console.log('Cancel Pressed'),
-  //           style: 'cancel',
-  //         },
-  //         {text: 'Open Settings', onPress: notifee.openNotificationSettings},
-  //       ],
-  //       {cancelable: true},
-  //     );
-  //     return null;
-  //   }
+  const loginWithApple = async () => {
+    try {
+      const appleAuthRequestResponse = await appleAuth.performRequest({
+        requestedOperation: appleAuth.Operation.LOGIN,
+        requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
+      });
+      console.log(appleAuthRequestResponse, '====>reached');
 
-  //   await messaging().registerDeviceForRemoteMessages();
-  //   const token = await messaging().getToken();
-  //   setPushToken(token);
-  // }, []);
+      const {user, email, fullName, identityToken} = appleAuthRequestResponse;
 
-  // useEffect(() => {
-  //   getDeviceToken();
-  // }, []);
+      const name = fullName.givenName
+        ? fullName.givenName
+        : fullName.middleName;
 
-  // useEffect(() => {
-  //   const subscription = AppState.addEventListener('change', nextAppState => {
-  //     if (
-  //       appState.current.match(/inactive|background/) &&
-  //       nextAppState === 'active'
-  //     ) {
-  //       getDeviceToken();
-  //     }
+      let payload = null;
 
-  //     appState.current = nextAppState;
-  //   });
+      if (email != null) {
+        payload = {
+          uid: user,
+          email,
+          name,
+        };
+      } else {
+        const response = jwt_decode(identityToken);
+        payload = {
+          uid: user,
+          email: response.email,
+          name,
+        };
+        console.log(appleAuthRequestResponse, '====>else part');
+        console.log(response, '====>else part jwtresponse');
 
-  //   return () => {
-  //     subscription.remove();
-  //   };
-  // }, []);
+        return;
+      }
+
+      await loginWithSocialAccount('apple', payload);
+    } catch (error) {
+      if (error.code === appleAuth.Error.CANCELED) {
+        console.log('User canceled Apple Sign-In.');
+      } else {
+        console.error('Apple Sign-In Error:', error);
+      }
+    }
+  };
 
   const loginWithGoogle = useCallback(async () => {
     try {
@@ -78,9 +80,9 @@ const useAuth = () => {
       setLoading(false);
 
       const {
-        user: {id, name, email, photo},
+        user: {id, name, email},
       } = userInfo;
-      await loginWithSocialAccount('google', {id, name, email, photo});
+      await loginWithSocialAccount('google', {id, name, email});
     } catch (error) {
       setLoading(false);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -119,10 +121,25 @@ const useAuth = () => {
     [updateUser, pushToken, navigaiton],
   );
 
+  const deleteAccount = useCallback(
+    async id => {
+      setLoading(true);
+      const respons = await server.deleteAccount(id);
+      setLoading(false);
+      if (!respons.ok) {
+        return helper.apiResponseErrorHandler(respons);
+      }
+      signout();
+    },
+    [signout],
+  );
+
   return {
     loading,
+    loginWithApple,
     loginWithGoogle,
     loginWithSocialAccount,
+    deleteAccount,
   };
 };
 

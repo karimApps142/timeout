@@ -1,55 +1,62 @@
-import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import React, {useCallback, useEffect} from 'react';
+import {View, StyleSheet, RefreshControl} from 'react-native';
 import {
   BaseFlatList,
   BaseHeader,
   BaseView,
+  DataNotFound,
   HomeCard,
   HomeFooter,
+  LoadingListIndicator,
 } from '../components';
 import {COLORS, SIZES} from '../constants/theme';
+import {useDispatch, useSelector} from 'react-redux';
+import usePagination, {PAGINATION_MODE} from '../hooks/usePagination';
+import {setUsers} from '../store/home';
 
 export const HomeScreen = ({navigation}) => {
-  const data = [
-    {
-      id: 1,
-      name: 'Alice Johnson',
-      username: 'alicejohnson',
-      screen_time: '4h 35m',
+  const dispatch = useDispatch();
+  const {
+    loading: serverLoading,
+    users,
+    next_page,
+    pagination,
+  } = useSelector(state => state.home);
+
+  const {
+    getPaginationData,
+    state: {loading, loadMore, refreshing},
+  } = usePagination();
+
+  const getHomeData = useCallback(
+    (paginationModeState, data) => {
+      getPaginationData({
+        ...paginationModeState,
+        next_page,
+        url: 'getFriendsScreenTime',
+        param: data,
+        onSuccess: payload => dispatch(setUsers(payload)),
+      });
     },
-    {id: 2, name: 'Bob Lee', username: 'boblee', screen_time: '2h 18m'},
-    {
-      id: 3,
-      name: 'Charlie Brown',
-      username: 'charliebrown',
-      screen_time: '7h 42m',
-    },
-    {id: 4, name: 'David Kim', username: 'davidkim', screen_time: '1h 59m'},
-    {id: 5, name: 'Emily Chen', username: 'emilychen', screen_time: '5h 12m'},
-    {
-      id: 6,
-      name: 'Frank Miller',
-      username: 'frankmiller',
-      screen_time: '3h 27m',
-    },
-    {id: 7, name: 'Grace Lee', username: 'gracelee', screen_time: '6h 51m'},
-    {id: 8, name: 'Henry Park', username: 'henrypark', screen_time: '8h 03m'},
-    {
-      id: 9,
-      name: 'Isabella Garcia',
-      username: 'isabellagarcia',
-      screen_time: '9h 47m',
-    },
-    {
-      id: 10,
-      name: 'Jack Johnson',
-      username: 'jackjohnson',
-      screen_time: '2h 59m',
-    },
-  ];
+    [dispatch, next_page, getPaginationData],
+  );
+
+  useEffect(() => {
+    getHomeData(PAGINATION_MODE.loading);
+  }, []);
+
+  const handleRefresh = () => {
+    getHomeData(PAGINATION_MODE.refreshing);
+  };
+
+  const handleLoadMore = () => {
+    if (pagination && !loadMore) {
+      getHomeData(PAGINATION_MODE.loadMore);
+    }
+  };
 
   return (
-    <BaseView>
+    <BaseView loading={loading} overlayLoading={serverLoading}>
       <View style={styles.container}>
         <BaseHeader
           onPressAdd={() => navigation.navigate('addFriendsScreen')}
@@ -61,14 +68,22 @@ export const HomeScreen = ({navigation}) => {
         <View style={styles.BgBlackView} />
 
         <BaseFlatList
-          data={data}
-          renderItem={({item}) => (
+          data={users}
+          keyExtractor={(_, index) => `key${index}`}
+          renderItem={({item, index}) => (
             <HomeCard
               onPress={() => navigation.navigate('userDetailScreen')}
               item={item}
+              index={index}
             />
           )}
           contentContainerStyle={styles.flatList}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+          }
+          onEndReached={handleLoadMore}
+          ListFooterComponent={<LoadingListIndicator loading={loadMore} />}
+          ListEmptyComponent={<DataNotFound title="No data found!" />}
         />
       </View>
 

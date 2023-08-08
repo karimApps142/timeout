@@ -15,7 +15,7 @@ export const COLORS = {
   primary_third: '#BD5FA3',
   drawer_bg: '#1F32FA',
   secondary: '#A59AFA',
-  black: '#1E1F20',
+  black: '#000000',
   white: '#FFFFFF',
   lightGray: '#EFF2F5',
   gray: '#8B9097',

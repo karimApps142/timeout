@@ -6,7 +6,7 @@ import icons from '../constants/icons';
 import useAuth from '../hooks/useAuth';
 
 export const LoginScreen = ({navigation}) => {
-  const {loading, loginWithGoogle} = useAuth();
+  const {loading, loginWithGoogle, loginWithApple} = useAuth();
   return (
     <BaseView overlayLoading={loading}>
       <View style={styles.container}>
@@ -29,9 +29,7 @@ export const LoginScreen = ({navigation}) => {
           <ORLine />
 
           <BaseButton
-            onPress={() => {
-              navigation.navigate('addUserNameStack');
-            }}
+            onPress={() => loginWithApple()}
             title={'Log In With Apple'}
             icon={icons.apple}
             iconOrgColor

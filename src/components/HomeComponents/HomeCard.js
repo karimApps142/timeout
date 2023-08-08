@@ -3,22 +3,28 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import {COLORS, FONTS} from '../../constants/theme';
 import {BaseIcon} from '../SharedComponents/BaseIcon';
 import icons from '../../constants/icons';
+import helper from '../../constants/helper';
 
-const HomeCard = ({onPress, item, disabled = false}) => {
+const HomeCard = ({onPress, item, index, disabled = false}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.7}
       disabled={disabled}
       style={styles.card}>
-      <BaseIcon icon={icons.arrow_up} color={COLORS.green} size={12} />
-      <Text style={styles.count}>2</Text>
-      <Image source={icons.emoji} style={styles.emoji} />
+      {/* <BaseIcon icon={icons.arrow_up} color={COLORS.green} size={12} /> */}
+      <Text style={styles.count}>{index + 1}</Text>
+      <Image
+        source={helper.emojis[item?.user?.avatar - 1]}
+        style={styles.emoji}
+      />
       <View style={styles.userDetails}>
-        <Text style={styles.name}>{item?.name}</Text>
-        <Text style={styles.username}>{item?.username}</Text>
+        <Text style={styles.name}>{item?.user?.name}</Text>
+        <Text style={styles.username}>{item?.user?.username}</Text>
       </View>
-      <Text style={styles.time}>{item?.screen_time}</Text>
+      <Text style={styles.time}>
+        {helper.convertMinutesToHourMinuteFormat(item?.total_time)}
+      </Text>
       <BaseIcon icon={icons.clock} color={COLORS.white} size={24} />
     </TouchableOpacity>
   );

@@ -62,7 +62,7 @@ target 'Timeout' do
   target 'TimeoutTests' do
     inherit! :complete
 
-    pod 'GoogleSignIn', '~> 6.1.0'
+    pod 'GoogleSignIn', '~> 7.0'
 
     # Pods for testing
   end

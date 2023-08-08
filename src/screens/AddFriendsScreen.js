@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {
   BaseButton,
@@ -9,22 +9,31 @@ import {
   UserCard,
 } from '../components';
 import {COLORS, FONTS} from '../constants/theme';
+import {useDispatch, useSelector} from 'react-redux';
+import {getSearchData} from '../store/friends';
 
 export const AddFriendsScreen = () => {
-  const requestsData = [
-    {id: 1, name: 'John Smith', username: 'johnsmith'},
-    {id: 2, name: 'Jane Doe', username: 'janedoe'},
-  ];
+  const dispatch = useDispatch();
+  const {loading, overlayLoading, friendRequests, searchData} = useSelector(
+    state => state.friends,
+  );
 
-  const data = [
-    {id: 1, name: 'Alice Johnson', username: 'alicejohnson'},
-    {id: 2, name: 'Bob Lee', username: 'boblee'},
-    {id: 3, name: 'Charlie Brown', username: 'charliebrown'},
-    {id: 4, name: 'David Kim', username: 'davidkim'},
-    {id: 5, name: 'Emily Chen', username: 'emilychen'},
-  ];
+  const [search, setSearch] = useState('');
+
+  useEffect(() => {
+    dispatch(getSearchData());
+  }, []);
+
+  const onPressSearch = useCallback(() => {
+    dispatch(
+      getSearchData({
+        username: search,
+      }),
+    );
+  }, [dispatch, search]);
+
   return (
-    <BaseView>
+    <BaseView overlayLoading={loading || overlayLoading}>
       <View style={styles.container}>
         <BaseHeader otherStyles={styles.header} title="Add Friends" />
 
@@ -33,20 +42,26 @@ export const AddFriendsScreen = () => {
           ListHeaderComponent={
             <>
               <BaseButton title={'Invite Friends '} />
-              <BaseSearch />
+              <BaseSearch
+                value={search}
+                onChangeText={setSearch}
+                onPressSearch={onPressSearch}
+              />
 
-              <Text style={[styles.headings, {marginTop: 10}]}>
-                Accept Request
-              </Text>
+              {Object.keys(friendRequests).length > 0 ? (
+                <Text style={[styles.headings]}>Accept Request</Text>
+              ) : null}
 
               <BaseFlatList
-                data={requestsData}
+                data={friendRequests}
                 renderItem={({item}) => <UserCard friendRequest item={item} />}
               />
-              <Text style={styles.headings}>Add New</Text>
+              {Object.keys(searchData).length > 0 ? (
+                <Text style={styles.headings}>Add New</Text>
+              ) : null}
             </>
           }
-          data={data}
+          data={searchData}
           renderItem={({item}) => <UserCard item={item} />}
         />
       </View>
@@ -73,5 +88,6 @@ const styles = StyleSheet.create({
   headings: {
     color: COLORS.gray,
     ...FONTS.h4,
+    marginVertical: 5,
   },
 });

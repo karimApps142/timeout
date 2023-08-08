@@ -1,7 +1,3 @@
-/**
- * @format
- */
-
 import React, {useMemo, useState} from 'react';
 import {AppRegistry} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
@@ -11,6 +7,7 @@ import {name as appName} from './app.json';
 import {Provider} from 'react-redux';
 import {store} from './src/store';
 import AuthContext from './src/context/AuthContext';
+import localStorage from './src/server/localStorage';
 
 const Root = ({isHeadless}) => {
   const [user, setUser] = useState(null);
@@ -20,7 +17,10 @@ const Root = ({isHeadless}) => {
       updateUser: data => {
         setUser(data);
       },
-      signout: async () => {},
+      signout: async () => {
+        await localStorage.removeToken();
+        setUser(null);
+      },
       initialize: async () => {},
     }),
     [],

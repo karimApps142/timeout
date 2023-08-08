@@ -5,6 +5,8 @@ export * from './SharedComponents/BaseHeader';
 export * from './SharedComponents/BaseInput';
 export * from './SharedComponents/BaseFlateList';
 export * from './SharedComponents/BaseSearch';
+export * from './SharedComponents/LoadingListIndicator';
+export * from './SharedComponents/DataNotFound';
 
 // login Screens components
 export * from './LoginComponents/ORLine';

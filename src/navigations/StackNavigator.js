@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   AddFriendsScreen,
   AddUserNameScreen,
+  EditProfileScreen,
   HomeScreen,
   LoginScreen,
   ProfileSettingsScreen,
@@ -31,6 +32,7 @@ const StackNavigator = () => (
       name="profileSettingScreen"
       component={ProfileSettingsScreen}
     />
+    <Stack.Screen name="EditProfile" component={EditProfileScreen} />
   </Stack.Navigator>
 );
 

@@ -1,5 +1,7 @@
+import moment from 'moment';
 import toast from '../refs/toast';
 import {URL} from '../server/config';
+import icons from './icons';
 
 const getImage = img => {
   if (!img) return null;
@@ -23,9 +25,22 @@ const apiMessageHandler = resp => {
   }
 };
 
+const convertMinutesToHourMinuteFormat = minutes => {
+  if (!minutes) return 0;
+  const duration = moment.duration(minutes, 'minutes');
+  const hours = Math.floor(duration.asHours());
+  const mins = Math.floor(duration.asMinutes()) % 60;
+
+  return `${hours}h ${mins}m`;
+};
+
+const emojis = [icons.one, icons.two, icons.three, icons.four, icons.five];
+
 export default {
   getImage,
   getFullName,
   apiResponseErrorHandler,
   apiMessageHandler,
+  convertMinutesToHourMinuteFormat,
+  emojis,
 };
