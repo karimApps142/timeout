@@ -9,7 +9,7 @@ export const DataNotFound = ({title = 'No Data Found...'}) => (
       ...FONTS.body4,
       textAlign: 'center',
       marginTop: 20,
-      color: COLORS.black,
+      color: COLORS.white,
     }}>
     {title}
   </Text>

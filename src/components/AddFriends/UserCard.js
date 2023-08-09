@@ -18,29 +18,31 @@ const UserCard = ({item, friendRequest}) => {
         <Text style={styles.name}>{user?.name}</Text>
         <Text style={styles.username}>@{user?.username}</Text>
       </View>
-      <TouchableOpacity
-        style={styles.acceptButton}
-        disabled={user?.to}
-        onPress={() => {
-          if (friendRequest && user?.from) {
-            dispatch(friendRequestAccept(item?.id));
-          } else {
-            dispatch(friendRequestSend({friend_id: item?.id}));
-          }
-        }}>
-        <Text style={styles.acceptText}>
-          {friendRequest
-            ? 'Accept'
-            : user?.from
-            ? 'Accept'
-            : user?.to
-            ? 'Sent'
-            : 'Add'}
-        </Text>
-        {!user?.to ? (
-          <BaseIcon icon={icons.accept} color={COLORS.white} size={14} />
-        ) : null}
-      </TouchableOpacity>
+      {!user?.isFriend ? (
+        <TouchableOpacity
+          style={styles.acceptButton}
+          disabled={user?.to}
+          onPress={() => {
+            if (friendRequest) {
+              dispatch(friendRequestAccept(item?.id));
+            } else {
+              dispatch(friendRequestSend({friend_id: item?.id}));
+            }
+          }}>
+          <Text style={styles.acceptText}>
+            {friendRequest
+              ? 'Accept'
+              : user?.from
+              ? 'Accept'
+              : user?.to
+              ? 'Sent'
+              : 'Add'}
+          </Text>
+          {!user?.to ? (
+            <BaseIcon icon={icons.accept} color={COLORS.white} size={14} />
+          ) : null}
+        </TouchableOpacity>
+      ) : null}
     </View>
   );
 };

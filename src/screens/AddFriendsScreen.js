@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useCallback, useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {
@@ -11,6 +12,7 @@ import {
 import {COLORS, FONTS} from '../constants/theme';
 import {useDispatch, useSelector} from 'react-redux';
 import {getSearchData} from '../store/friends';
+import helper from '../constants/helper';
 
 export const AddFriendsScreen = () => {
   const dispatch = useDispatch();
@@ -41,7 +43,10 @@ export const AddFriendsScreen = () => {
           contentContainerStyle={styles.bottomMain}
           ListHeaderComponent={
             <>
-              <BaseButton title={'Invite Friends '} />
+              <BaseButton
+                onPress={() => helper.inviteFriends()}
+                title={'Invite Friends '}
+              />
               <BaseSearch
                 value={search}
                 onChangeText={setSearch}

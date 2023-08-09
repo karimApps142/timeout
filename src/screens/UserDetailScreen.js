@@ -1,20 +1,46 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
 import {BaseHeader, BaseIcon, BaseView, HomeCard} from '../components';
 import {COLORS, FONTS, SIZES} from '../constants/theme';
 import icons from '../constants/icons';
+import {useRoute} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
+import {removeFriend} from '../store/friends';
 
 export const UserDetailScreen = () => {
+  const route = useRoute();
+  const dispatch = useDispatch();
+  const {item, index} = route.params;
+  const {loading} = useSelector(state => state.friends);
+
+  const deleteFriend = () => {
+    Alert.alert(
+      'Remove Friend',
+      'Are you sure you want to remove this friend?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Remove',
+          style: 'destructive',
+          onPress: () => dispatch(removeFriend(item?.id)),
+        },
+      ],
+    );
+  };
+
   return (
-    <BaseView>
+    <BaseView overlayLoading={loading}>
       <View style={styles.container}>
         <BaseHeader otherStyles={styles.header} />
         <View style={styles.BgBlackView} />
 
         <View style={styles.bottomMain}>
-          <HomeCard disabled={true} />
+          <HomeCard disabled={true} item={item} index={index} />
           <TouchableOpacity
-            onPress={() => {}}
+            onPress={() => deleteFriend(item?.id)}
             style={styles.removeButton}
             activeOpacity={0.7}>
             <Text style={styles.btnText}>Remove Friend</Text>

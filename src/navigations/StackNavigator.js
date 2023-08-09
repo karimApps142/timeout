@@ -4,6 +4,7 @@ import {
   AddFriendsScreen,
   AddUserNameScreen,
   EditProfileScreen,
+  FaqScreen,
   HomeScreen,
   LoginScreen,
   ProfileSettingsScreen,
@@ -33,6 +34,7 @@ const StackNavigator = () => (
       component={ProfileSettingsScreen}
     />
     <Stack.Screen name="EditProfile" component={EditProfileScreen} />
+    <Stack.Screen name="Faq" component={FaqScreen} />
   </Stack.Navigator>
 );
 

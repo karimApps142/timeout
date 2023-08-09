@@ -14,10 +14,7 @@ const HomeCard = ({onPress, item, index, disabled = false}) => {
       style={styles.card}>
       {/* <BaseIcon icon={icons.arrow_up} color={COLORS.green} size={12} /> */}
       <Text style={styles.count}>{index + 1}</Text>
-      <Image
-        source={helper.emojis[item?.user?.avatar - 1]}
-        style={styles.emoji}
-      />
+      <Image source={helper.emojis[item?.user?.avatar]} style={styles.emoji} />
       <View style={styles.userDetails}>
         <Text style={styles.name}>{item?.user?.name}</Text>
         <Text style={styles.username}>{item?.user?.username}</Text>

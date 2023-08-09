@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {View, StyleSheet} from 'react-native';
 import * as Yup from 'yup';
 
@@ -7,36 +7,18 @@ import {COLORS, FONTS, SIZES} from '../constants/theme';
 import {BaseForm} from '../components/Form/BaseForm';
 import {SubmitButton} from '../components/Form/SubmitButton';
 import {BaseFormInput} from '../components/Form/BaseFormInput';
-import server from '../server';
-import helper from '../constants/helper';
 import AuthContext from '../context/AuthContext';
+import useAuth from '../hooks/useAuth';
 
 const validationSchema = Yup.object().shape({
   username: Yup.string().required('Username is required'),
   name: Yup.string().required('Name is required'),
 });
 
-export const EditProfileScreen = ({navigation, route}) => {
-  const {
-    user,
-    trigger: {updateUser},
-  } = useContext(AuthContext);
+export const EditProfileScreen = ({route}) => {
+  const {user} = useContext(AuthContext);
+  const {loading, updateProfile} = useAuth();
   const input = route.params?.input ?? null;
-  const [loading, setLoading] = useState(false);
-
-  const updateProfile = useCallback(
-    async payload => {
-      setLoading(true);
-      const response = await server.editProfile(payload);
-      setLoading(false);
-      if (!response.ok) {
-        return helper.apiResponseErrorHandler(response);
-      }
-      updateUser(response.data);
-      navigation.goBack();
-    },
-    [navigation, updateUser],
-  );
 
   if (!input) {
     return null;

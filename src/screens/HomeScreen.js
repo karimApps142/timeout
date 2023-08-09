@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useCallback, useEffect} from 'react';
 import {View, StyleSheet, RefreshControl} from 'react-native';
 import {
@@ -72,7 +73,9 @@ export const HomeScreen = ({navigation}) => {
           keyExtractor={(_, index) => `key${index}`}
           renderItem={({item, index}) => (
             <HomeCard
-              onPress={() => navigation.navigate('userDetailScreen')}
+              onPress={() =>
+                navigation.navigate('userDetailScreen', {item, index})
+              }
               item={item}
               index={index}
             />

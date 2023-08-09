@@ -19,6 +19,8 @@ const friendRequestSend = payload =>
 const friendRequestAccept = id =>
   client.post(`v1/friend-requests/${id}/accept`);
 
+const removeFriend = id => client.delete(`v1/friends/${id}`);
+
 export default {
   signup,
   me,
@@ -28,4 +30,5 @@ export default {
   searchUsers,
   friendRequestSend,
   friendRequestAccept,
+  removeFriend,
 };

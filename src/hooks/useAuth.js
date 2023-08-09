@@ -121,6 +121,20 @@ const useAuth = () => {
     [updateUser, pushToken, navigaiton],
   );
 
+  const updateProfile = useCallback(
+    async payload => {
+      setLoading(true);
+      const response = await server.editProfile(payload);
+      setLoading(false);
+      if (!response.ok) {
+        return helper.apiResponseErrorHandler(response);
+      }
+      updateUser(response.data);
+      navigaiton.navigate('profileSettingScreen');
+    },
+    [navigaiton, updateUser],
+  );
+
   const deleteAccount = useCallback(
     async id => {
       setLoading(true);
@@ -139,6 +153,7 @@ const useAuth = () => {
     loginWithApple,
     loginWithGoogle,
     loginWithSocialAccount,
+    updateProfile,
     deleteAccount,
   };
 };

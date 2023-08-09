@@ -1,16 +1,32 @@
-import React, {useCallback, useContext} from 'react';
-import {View, Text, StyleSheet, ScrollView, Alert} from 'react-native';
-import {BaseHeader, BaseInput, BaseView, SupportButton} from '../components';
-import {COLORS, FONTS} from '../constants/theme';
+import React, {useCallback, useContext, useEffect, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Alert,
+  TouchableOpacity,
+} from 'react-native';
+import {
+  BaseHeader,
+  BaseIcon,
+  BaseInput,
+  BaseView,
+  SupportButton,
+} from '../components';
+import {COLORS, FONTS, SIZES} from '../constants/theme';
 import icons from '../constants/icons';
 import AuthContext from '../context/AuthContext';
 import useAuth from '../hooks/useAuth';
+import helper from '../constants/helper';
 
 export const ProfileSettingsScreen = ({navigation}) => {
   const {
     user,
     trigger: {signout},
   } = useContext(AuthContext);
+  const [avatar, setAvatar] = useState(user?.avatar);
+  const {loading: serverLoading, updateProfile} = useAuth();
 
   const {loading, deleteAccount} = useAuth();
 
@@ -28,6 +44,12 @@ export const ProfileSettingsScreen = ({navigation}) => {
     ]);
   };
 
+  useEffect(() => {
+    if (user?.avatar != avatar) {
+      updateProfile({avatar});
+    }
+  }, [avatar, user?.avatar, updateProfile]);
+
   const onPressDelete = useCallback(() => {
     showAlert(
       'Delete Account',
@@ -35,7 +57,7 @@ export const ProfileSettingsScreen = ({navigation}) => {
       'Delete',
       () => deleteAccount(user?.id),
     );
-  }, []);
+  }, [deleteAccount, user?.id]);
 
   const onPressSignout = useCallback(() => {
     showAlert(
@@ -47,7 +69,7 @@ export const ProfileSettingsScreen = ({navigation}) => {
   }, [signout]);
 
   return (
-    <BaseView overlayLoading={loading}>
+    <BaseView overlayLoading={loading || serverLoading}>
       <View style={styles.container}>
         <BaseHeader otherStyles={styles.header} title="Settings" />
 
@@ -77,6 +99,34 @@ export const ProfileSettingsScreen = ({navigation}) => {
               })
             }
           />
+          <View style={styles.card}>
+            {helper.emojis.map((emj, index) => (
+              <TouchableOpacity
+                key={index}
+                style={styles.cartItem}
+                onPress={() => setAvatar(index)}
+                activeOpacity={0.7}>
+                {avatar == index ? (
+                  <BaseIcon
+                    icon={icons.arrow_down}
+                    size={10}
+                    color={COLORS.white}
+                  />
+                ) : null}
+
+                <View style={styles.space} />
+                <BaseIcon
+                  icon={emj}
+                  size={
+                    avatar == index
+                      ? SIZES.width / (helper.emojis.length + 2)
+                      : SIZES.width / (helper.emojis.length * 2)
+                  }
+                  orgColor
+                />
+              </TouchableOpacity>
+            ))}
+          </View>
           <Text style={[styles.headings, {marginTop: 10}]}>Account</Text>
           <BaseInput
             leftIcon={icons.email}
@@ -86,19 +136,33 @@ export const ProfileSettingsScreen = ({navigation}) => {
           />
           <Text style={[styles.headings, {marginTop: 10}]}>Support</Text>
           <SupportButton
+            onPress={() => navigation.navigate('Faq')}
             icon={icons.notification}
             title={'Frequently asked question'}
           />
-          <SupportButton icon={icons.call} title={'Support'} />
+          <SupportButton
+            icon={icons.call}
+            title={'Support'}
+            onPress={() => helper.handleSupport()}
+          />
           <SupportButton icon={icons.privacy} title={'Privacy Policy'} />
           <SupportButton
+            onPress={() => helper.handleReportErrorFeedback()}
             icon={icons.feedback}
             title={'Report an error/feedback'}
           />
-          <SupportButton icon={icons.star} title={'Leave a review'} />
+          <SupportButton
+            onPress={() => helper.handleLeaveReview()}
+            icon={icons.star}
+            title={'Leave a review'}
+          />
 
           <Text style={[styles.headings, {marginTop: 10}]}>More</Text>
-          <SupportButton icon={icons.invite} title={'Invite Friends'} />
+          <SupportButton
+            onPress={() => helper.inviteFriends()}
+            icon={icons.invite}
+            title={'Invite Friends'}
+          />
           <SupportButton
             onPress={onPressDelete}
             icon={icons.bin}
@@ -133,5 +197,22 @@ const styles = StyleSheet.create({
   headings: {
     color: COLORS.gray,
     ...FONTS.h4,
+  },
+  card: {
+    backgroundColor: COLORS.primary,
+    padding: 10,
+    borderRadius: 10,
+    marginVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cartItem: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 5,
+  },
+  space: {
+    marginTop: 5,
   },
 });

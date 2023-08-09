@@ -1,6 +1,8 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import server from '../server';
 import helper from '../constants/helper';
+import {updateHomeData} from './home';
+import navigation from '../navigations/rootNavigator';
 
 const initialState = {
   loading: false,
@@ -48,6 +50,20 @@ export const getSearchData = createAsyncThunk(
   },
 );
 
+export const removeFriend = createAsyncThunk(
+  'friends/removeFriend',
+  async (id, {dispatch}) => {
+    dispatch(setLoading(true));
+    const response = await server.removeFriend(id);
+    dispatch(setLoading(false));
+    if (!response.ok) {
+      return helper.apiResponseErrorHandler(response);
+    }
+    dispatch(updateHomeData(id));
+    navigation.goBack();
+  },
+);
+
 export const friendsSlice = createSlice({
   name: 'friends',
   initialState,
@@ -61,7 +77,7 @@ export const friendsSlice = createSlice({
     setSearchData: (state, {payload}) => {
       const {friendRequests, searchData} = payload;
       state.friendRequests = friendRequests;
-      state.searchData = searchData;
+      state.searchData = searchData.filter(i => i.from !== true);
     },
     onFriendRequestAccept: (state, {payload}) => {
       state.friendRequests = state.friendRequests.filter(i => i.id !== payload);

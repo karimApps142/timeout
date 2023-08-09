@@ -25,9 +25,12 @@ export const homeSlice = createSlice({
         state.pagination = false;
       }
     },
+    updateHomeData: (state, {payload}) => {
+      state.users = state.users.filter(u => u.id !== payload);
+    },
   },
 });
 
-export const {setLoading, setUsers} = homeSlice.actions;
+export const {setLoading, setUsers, updateHomeData} = homeSlice.actions;
 
 export default homeSlice.reducer;
